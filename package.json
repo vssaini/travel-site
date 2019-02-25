@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "jquery": "^3.3.1",
+    "jquery-smooth-scroll": "^2.2.0",
     "normalize.css": "^8.0.1",
     "waypoints": "^4.0.1"
   },
@@ -26,7 +27,7 @@
     "postcss-hexrgba": "^1.0.1",
     "postcss-import": "^12.0.1",
     "postcss-mixins": "^6.2.1",
-    "postcss-nested": "^4.1.1",
+    "postcss-nested": "^4.1.2",
     "postcss-simple-vars": "^5.0.1",
     "webpack": "^4.29.4",
     "webpack-cli": "^3.2.3"
