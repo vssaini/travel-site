@@ -1,7 +1,18 @@
 var gulp = require('gulp'),
-webpack = require('webpack');
+webpack = require('webpack'),
+modernizr = require('gulp-modernizr');
 
-gulp.task('scripts', function(callback){
+gulp.task('modernizr', function(){
+	return gulp.src(['./app/assets/styles/**/*.css','./app/assets/scripts/**/*.js'])
+	.pipe(modernizr({
+		options: [
+		   "setClasses"
+		]
+	}))
+	.pipe(gulp.dest('./app/temp/scripts'));
+});
+
+gulp.task('scripts', gulp.series('modernizr',function(callback){
   webpack(require('../../webpack.config.js'), function(err,stats){
     if (err){
     	console.log(err.toString());
@@ -10,4 +21,5 @@ gulp.task('scripts', function(callback){
   	console.log(stats.toString());
   	callback();
   }); 
-});
+}));
+
